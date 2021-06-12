@@ -1,5 +1,5 @@
 let superChimpOne = {
-    astronautID: 1,
+
     name: "Chad",
     species: "Chimpanzee",
     mass: 9,
@@ -11,7 +11,7 @@ let superChimpOne = {
 };
 
 let salamander = {
-    astronautID: 2,
+
     name: "Lacey",
     species: "Axolotl Salamander",
     mass: 0.1,
@@ -23,7 +23,7 @@ let salamander = {
 };
 
 let superChimpTwo = {
-    astronautID: 3,
+
     name: "Brad",
     species: "Chimpanzee",
     mass: 11,
@@ -35,7 +35,7 @@ let superChimpTwo = {
 };
 
 let superBeagle = {
-    astronautID: 4,
+
     name: "Leroy",
     species: "Beagle",
     mass: 14,
@@ -47,7 +47,7 @@ let superBeagle = {
 };
 
 let superTaradigrade = {
-    astronautID: 5,
+
     name: "Almina",
     species: "Tardigrade",
     mass: 0.0000000001,
@@ -61,7 +61,27 @@ let superTaradigrade = {
 let crew = [superChimpOne,salamander,superChimpTwo,superBeagle,superTaradigrade]
 
 // After you have created the other object literals, add the astronautID property to each one.
-
+let ids = [];
+let id = 0;
+for (let i = 0; i < crew.length; i++){
+  id = Math.ceil(Math.random()*10);
+  
+    if (!ids.includes(id))
+    {
+      crew[i].astronautID = id;
+      ids.push(id);
+      
+    } else 
+    {
+      while (ids.includes(id))
+      {
+        id = Math.round(Math.random()*10);
+      }
+      crew[i].astronautID = id;
+      ids.push(id);
+    }
+    console.log(crew[i].astronautID + crew[i].name);
+}
 // Create an array to hold the animal objects.
 
 // Print out the relevant information about each animal.
@@ -97,3 +117,4 @@ return arrOfTurns.join('');
 }
 
 fitnessTest(crew);
+
