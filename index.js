@@ -73,7 +73,7 @@ for (let i = 0; i < crew.length; i++){
       
     } else 
     {
-      while (ids.includes(id))
+      while (ids.includes(id)) // there's a much shorter way to do this, check the same studio.
       {
         id = Math.round(Math.random()*10);
       }
